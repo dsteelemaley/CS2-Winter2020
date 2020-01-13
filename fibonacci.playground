@@ -1,0 +1,23 @@
+//Declare a function "fibonacci" that takes an Integer input,
+//and outputs an array of integers
+func fibonacci(under: Int) -> ([Int]){
+    //initialize the array
+    var fib = [0,1]
+    //Append the numbers
+    while (fib.reversed()[0]+fib.reversed()[1] < under){
+        fib.append(fib.reversed()[0]+fib.reversed()[1])
+    }
+    //Some different return cases
+    if (under <= 0){
+        return []
+    } else {
+        switch under {
+        case 1:
+            return [0]
+        default:
+            return fib
+        }
+    }
+}
+
+print(fibonacci(under: 1000))
